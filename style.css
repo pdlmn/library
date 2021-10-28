@@ -1,0 +1,9 @@
+.hidden-form {
+  visibility: hidden;
+}
+
+.book {
+  width: 150px;
+  height: 150px;
+  outline: 1px solid red;
+}
