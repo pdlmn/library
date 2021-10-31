@@ -7,31 +7,37 @@
     <script src="library.js" defer></script>
   </head>
   <body>
-    <header>
-      <h1>Library</h1>
-    </header>
 
-    <main class="content">
+    <div class="container">
 
-      <div class="form-area">
-        <button id="toggle-form">New book</button>
+      <header>
+        <h1>Library</h1>
+      </header>
 
-        <form class="hidden-form" id="hidden-form">
-          <input type="text" placeholder="Title">
-          <input type="text" placeholder="Author">
-          <input type="number" placeholder="Pages" min=1 max=2000>
-          <input type="checkbox" placeholder="Read">
-          <input type="submit">
-        </form>
-      </div>
+      <main class="content">
 
-      <div class="books" id="books">
-      </div>
+        <div class="form-area">
+          <button id="toggle-form" class="button">New book</button>
 
-    </main>
+          <form class="hidden-form" id="hidden-form">
+            <input type="text" id="title" placeholder="Title">
+            <input type="text" id="author" placeholder="Author">
+            <input type="number" id="pages" placeholder="Pages" min=1 max=2000>
+            <input type="checkbox" id="read" placeholder="Read">
+            <input type="submit" class="button">
+          </form>
+        </div>
 
-    <footer>
-      <div>Made by pdmln &copy 2021</div>
-    </footer>
+        <div class="books" id="books">
+        </div>
+
+      </main>
+
+      <footer class="footer">
+        <div>Made by pdmln &copy 2021</div>
+      </footer>
+
+    </div>
+
   </body>
 </html>
