@@ -38,6 +38,7 @@ function addBookToLibrary(e) {
 }
 
 function displayBookCards() {
+  if (!myLibrary) return
   for (book of myLibrary) {
     createBookCard(book);
   }
