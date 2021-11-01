@@ -3,6 +3,11 @@ const submit = document.querySelector('input[type=submit]');
 const toggleFormButton = document.querySelector('#toggle-form')
 const hiddenForm = document.querySelector('#hidden-form');
 
+const titleInput = document.querySelector('#title');
+const authorInput = document.querySelector('#author');
+const pagesInput = document.querySelector('#pages');
+const readInput = document.querySelector('#read');
+
 let myLibrary = [];
 
 parseLocalStorage();
@@ -18,11 +23,6 @@ function Book(title, author, pages, read) {
 
 function addBookToLibrary(e) {
   e.preventDefault();
-
-  titleInput = document.querySelector('#title');
-  authorInput = document.querySelector('#author');
-  pagesInput = document.querySelector('#pages');
-  readInput = document.querySelector('#read');
 
   let book = new Book(titleInput.value, authorInput.value, pagesInput.value, readInput.checked);
 
