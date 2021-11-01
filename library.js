@@ -45,12 +45,22 @@ function displayBookCards() {
 
 function createBookCard(book) {
   let bookWrapper = document.createElement('div');
+
+  let titleDiv = document.createElement('div'); 
+  let authorDiv = document.createElement('div'); 
+  let pagesDiv = document.createElement('div'); 
+
+  titleDiv.textContent = `"${book.title}"`;
+  authorDiv.textContent = `by ${book.author}`;
+  pagesDiv.textContent = `${book.pages} pages`;
+
+  bookWrapper.appendChild(titleDiv);
+  bookWrapper.appendChild(authorDiv);
+  bookWrapper.appendChild(pagesDiv);
+
   bookWrapper.classList.add('book');
+  book.read ? bookWrapper.classList.add('read-book') : -1;
   bookWrapper.dataset.id = book.id;
-  bookWrapper.innerHTML = 
-    `<div>"${book.title}"</div>
-    <div>${book.author}</div>
-    <div>${book.pages} pages</div>`; 
 
   let readBookButton = document.createElement('button');
   readBookButton.classList.add('button');
@@ -78,6 +88,7 @@ function toggleRead(e) {
   let book = myLibrary[bookIndex];
   book.read = !book.read;
 
+  bookWrapper.classList.toggle('read-book');
   e.target.classList.toggle('is-read');
   e.target.classList.toggle('not-read');
 
