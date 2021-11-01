@@ -114,7 +114,8 @@ function showForm() {
 
 function parseLocalStorage() {
   let stringifiedLibrary = localStorage.getItem('myLibrary');
-  myLibrary = JSON.parse(stringifiedLibrary);
+  let localLibrary = JSON.parse(stringifiedLibrary);
+  if (localLibrary) myLibrary = localLibrary;
 }
 
 function saveLibraryToLocalStorage() {
