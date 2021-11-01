@@ -54,15 +54,16 @@ input {
 .books {
   display: flex;
   flex-wrap: wrap;
+  justify-content: flex-start;
   min-height: 150px;
   gap: 16px;
   margin: 24px;
 }
 
 .book {
-  min-width: 20vh;
-  min-height: 20vh;
-  max-height: 40vh;
+  min-width: 200px;
+  min-height: 200px;
+  max-height: 250px;
   border: 2px solid black;
   box-sizing: border-box;
   border-radius: 4px;
