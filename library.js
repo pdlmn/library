@@ -13,12 +13,14 @@ let myLibrary = [];
 parseLocalStorage();
 displayBookCards();
 
-function Book(title, author, pages, read) {
-  myLibrary.at(-1) ? this.id = myLibrary.at(-1).id + 1 : this.id = 1;
-  this.title = title;
-  this.author = author;
-  this.pages = pages;
-  this.read = read;
+class Book {
+  constructor(title, author, pages, read) {
+    myLibrary.at(-1) ? this.id = myLibrary.at(-1).id + 1 : this.id = 1;
+    this.title = title;
+    this.author = author;
+    this.pages = pages;
+    this.read = read;
+  }
 }
 
 function addBookToLibrary(e) {
