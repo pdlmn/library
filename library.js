@@ -25,18 +25,42 @@ class Book {
 
 function addBookToLibrary(e) {
   e.preventDefault();
+  const formIsValid = validateForm();
+  if (!formIsValid) return;
 
   let book = new Book(titleInput.value, authorInput.value, pagesInput.value, readInput.checked);
-
-  titleInput.value = '';
-  authorInput.value = '';
-  pagesInput.value = '';
-  readInput.checked = false;
+  clearFormInputs();
 
   myLibrary.push(book);
   createBookCard(book);
 
   saveLibraryToLocalStorage();
+}
+
+function validateForm() {
+  if (titleInput.value === '') {
+    titleInput.setCustomValidity('Please enter a title');
+    titleInput.reportValidity();
+    return false
+  }
+  if (authorInput.value === '') {
+    authorInput.setCustomValidity('Please enter an author name');
+    authorInput.reportValidity();
+    return false
+  }
+  if (Number(pagesInput.value) === 0 || Number(pagesInput.value) > 2000) {
+    pagesInput.setCustomValidity('Please enter a number of pages between 1 and 2000');
+    pagesInput.reportValidity();
+    return false
+  }
+  return true
+}
+
+function clearFormInputs() {
+  titleInput.value = '';
+  authorInput.value = '';
+  pagesInput.value = '';
+  readInput.checked = false;
 }
 
 function displayBookCards() {
